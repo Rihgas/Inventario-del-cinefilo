@@ -21,7 +21,7 @@ export class RegisterSerieComponent implements OnInit {
   imgUrl = 'https://familyandmedia.eu/wp-content/uploads/2017/07/52889_ppl.jpg';
   id: string | null;
 
-  constructor(private fb: FormBuilder, private serieService: SerieService, private router: Router, private idSeriePath: ActivatedRoute) {
+  constructor(private fb: FormBuilder, private serie_service: SerieService, private router: Router, private idSeriePath: ActivatedRoute) {
     this.serieForm = this.fb.group({
       name_serie: ['', Validators.required],
       genre: ['', Validators.required],
@@ -58,7 +58,7 @@ export class RegisterSerieComponent implements OnInit {
     }
     console.log(data_serie_form)
     if(this.id === null){
-      this.serieService.postSerie(data_serie_form).subscribe(data => {
+      this.serie_service.postSerie(data_serie_form).subscribe(data => {
         this.router.navigate(['/tu-lista']);
         Swal.fire({
           icon: 'success',
@@ -74,7 +74,7 @@ export class RegisterSerieComponent implements OnInit {
         console.log(error)
       })
     } else {
-      this.serieService.putSerie(this.id, data_serie_form).subscribe(data => {
+      this.serie_service.putSerie(this.id, data_serie_form).subscribe(data => {
         this.router.navigate(['/tu-lista']);
         Swal.fire({
           icon: 'success',
@@ -96,7 +96,8 @@ export class RegisterSerieComponent implements OnInit {
     if(this.id !== null){
       this.title = "Editar Serie";
       this.action = "Editar";
-      this.serieService.getSerie(this.id).subscribe(data => {
+      this.serie_service.getSerie(this.id).subscribe(data => {
+        let creator = (data.creator !== undefined) ? data.creator: 'No se'
         this.serieForm.setValue({
           name_serie: data.name_serie,
           genre: data.genre,
@@ -104,7 +105,7 @@ export class RegisterSerieComponent implements OnInit {
           episodes: data.episodes,
           eps_watched: data.eps_watched,
           cre_year: data.cre_year,
-          creator: data.times_creator,
+          creator: creator,
           rate: data.rate,
           last_date_watched: data.last_date_watched,
           image_ser: data.image_ser
