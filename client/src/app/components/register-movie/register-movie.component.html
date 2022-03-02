@@ -1,0 +1,185 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <app-navbar titulo="{{ title }}"></app-navbar>
+    </div>
+  </div>
+  <form
+    class="row g-3 bg-dark"
+    [formGroup]="movieForm"
+    (ngSubmit)="movieInfo()"
+  >
+    <div class="col-md-6">
+      <label for="inputMovie" class="form-label">Pelicula</label>
+      <input type="text" formControlName="name_movie" class="form-control" />
+      <p
+        class="fw-bold text-warning"
+        *ngIf="
+          movieForm.get('name_movie')?.hasError('required') &&
+          movieForm.get('name_movie')?.touched
+        "
+      >
+        Se requiere el nombre de la pelicula
+      </p>
+    </div>
+    <div class="col-md-6">
+      <label for="inputGenre" class="form-label">Genero</label>
+      <input type="text" formControlName="genre" class="form-control" />
+      <p
+        class="fw-bold text-warning"
+        *ngIf="
+          movieForm.get('genre')?.hasError('required') &&
+          movieForm.get('genre')?.touched
+        "
+      >
+        Se requiere el genero de la pelicula
+      </p>
+    </div>
+    <div class="col-12">
+      <label for="inputYear" class="form-label">Año de estreno</label>
+      <input
+        type="text"
+        formControlName="year"
+        class="form-control"
+        placeholder="1984"
+      />
+      <p
+        class="fw-bold text-warning"
+        *ngIf="
+          movieForm.get('year')?.hasError('required') &&
+          movieForm.get('year')?.touched
+        "
+      >
+        Se requiere el año de la pelicula
+      </p>
+      <p
+        class="fw-bold text-warning"
+        *ngIf="
+          movieForm.get('year')?.hasError('pattern') &&
+          movieForm.get('year')?.touched
+        "
+      >
+        El año debe ser un numero
+      </p>
+    </div>
+    <div class="col-12">
+      <label for="inputDirector" class="form-label">Director</label>
+      <input
+        type="text"
+        formControlName="director"
+        class="form-control"
+        placeholder="Opcional"
+      />
+    </div>
+    <div class="col-md-4">
+      <label for="inputRate" class="form-label">Calificacion del 0 al 5</label>
+      <input
+        type="text"
+        formControlName="rate"
+        class="form-control"
+        placeholder="Estrellas"
+      />
+      <p
+        class="fw-bold text-warning"
+        *ngIf="
+          movieForm.get('rate')?.hasError('required') &&
+          movieForm.get('rate')?.touched
+        "
+      >
+        Se requiere la calificacion para que mantengas el control de tu
+        inventario
+      </p>
+      <p
+        class="fw-bold text-warning"
+        *ngIf="
+          movieForm.get('rate')?.hasError('pattern') &&
+          movieForm.get('rate')?.touched
+        "
+      >
+        Debe ser un numero entre 0 y 5
+      </p>
+    </div>
+    <div class="col-md-6">
+      <label for="inputDate" class="form-label"
+        >Fecha de la ultima vez que se vio</label
+      >
+      <input type="date" formControlName="date_watched" class="form-control" />
+      <p
+        class="fw-bold text-warning"
+        *ngIf="
+          movieForm.get('date_watched')?.hasError('required') &&
+          movieForm.get('date_watched')?.touched
+        "
+      >
+        Se requiere la fecha para que mantengas el control de tu inventario
+      </p>
+      <p
+        class="fw-bold text-warning"
+        *ngIf="
+          movieForm.get('date_watched')?.hasError('pattern') &&
+          movieForm.get('date_watched')?.touched
+        "
+      >
+        Debe ser en formato fecha
+      </p>
+    </div>
+    <div class="col-md-2">
+      <label for="inputTimes" class="form-label"
+        >Cuantas veces la has visto?</label
+      >
+      <input type="text" formControlName="times_watched" class="form-control" />
+      <p
+        class="fw-bold text-warning"
+        *ngIf="
+          movieForm.get('times_watched')?.hasError('required') &&
+          movieForm.get('times_watched')?.touched
+        "
+      >
+        Se requiere la cantidad de veces para que mantengas el control de tu
+        inventario
+      </p>
+      <p
+        class="fw-bold text-warning"
+        *ngIf="
+          movieForm.get('times_watched')?.hasError('pattern') &&
+          movieForm.get('times_watched')?.touched
+        "
+      >
+        La cantidad debe ser en numeros
+      </p>
+    </div>
+    <div class="col-md-12">
+      <label for="inputImage" class="form-label"
+        >Agrega la Url de una foto de la Pelicula</label
+      >
+      <input type="text" formControlName="image_mov" class="form-control" />
+      <p
+        class="fw-bold text-warning"
+        *ngIf="
+          movieForm.get('image_mov')?.hasError('required') &&
+          movieForm.get('image_mov')?.touched
+        "
+      >
+        Se requiere la Url para que mantengas el control de tu inventario
+      </p>
+      <p
+        class="fw-bold text-warning"
+        *ngIf="
+          movieForm.get('image_mov')?.hasError('pattern') &&
+          movieForm.get('image_mov')?.touched
+        "
+      >
+        El texto debe ser una Url
+      </p>
+    </div>
+    <div class="col-12">
+      <button
+        type="submit"
+        class="btn btn-light"
+        [disabled]="movieForm.invalid"
+      >
+        {{ action }}
+      </button>
+    </div>
+  </form>
+</div>

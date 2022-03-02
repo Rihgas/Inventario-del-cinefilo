@@ -1,0 +1,221 @@
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+        <app-navbar titulo="{{ title }}"></app-navbar>
+      </div>
+    </div>
+    <form
+      class="row g-3 bg-dark"
+      [formGroup]="serieForm"
+      (ngSubmit)="serieInfo()"
+    >
+      <div class="col-md-6">
+        <label for="inputSerie" class="form-label">Serie</label>
+        <input type="text" formControlName="name_serie" class="form-control"/>
+        <p
+          class="fw-bold text-warning"
+          *ngIf="
+            serieForm.get('name_serie')?.hasError('required') &&
+            serieForm.get('name_serie')?.touched
+          "
+        >
+          Se requiere el nombre de la serie
+        </p>
+      </div>
+      <div class="col-md-6">
+        <label for="inputGenre" class="form-label">Genero</label>
+        <input type="text" formControlName="genre" class="form-control" />
+        <p
+          class="fw-bold text-warning"
+          *ngIf="
+            serieForm.get('genre')?.hasError('required') &&
+            serieForm.get('genre')?.touched
+          "
+        >
+          Se requiere el genero de la serie
+        </p>
+      </div>
+      <div class="col-12">
+        <label for="inputSeasons" class="form-label">Temporadas</label>
+        <input
+          type="text"
+          formControlName="seasons"
+          class="form-control"
+        />
+        <p
+          class="fw-bold text-warning"
+          *ngIf="
+            serieForm.get('seasons')?.hasError('required') &&
+            serieForm.get('seasons')?.touched
+          "
+        >
+          Se requiere el numero de temporadas de la serie
+        </p>
+        <p
+          class="fw-bold text-warning"
+          *ngIf="
+            serieForm.get('seasons')?.hasError('pattern') &&
+            serieForm.get('seasons')?.touched
+          "
+        >
+          Debe ser un numero
+        </p>
+      </div>
+      <div class="col-12">
+        <label for="inputEpisodes" class="form-label">Episodios</label>
+        <input
+          type="text"
+          formControlName="episodes"
+          class="form-control"
+          placeholder="10"
+        />
+        <p
+          class="fw-bold text-warning"
+          *ngIf="
+            serieForm.get('episodes')?.hasError('required') &&
+            serieForm.get('episodes')?.touched
+          "
+        >
+          Se requiere el numero de Episodios de la serie
+        </p>
+        <p
+          class="fw-bold text-warning"
+          *ngIf="
+            serieForm.get('episodes')?.hasError('pattern') &&
+            serieForm.get('episodes')?.touched
+          "
+        >
+          Debe ser un numero
+        </p>
+      </div>
+      <div class="col-md-4">
+        <label for="inputEps_watched" class="form-label">Episodios vistos</label>
+        <input
+          type="text"
+          formControlName="eps_watched"
+          class="form-control"
+        />
+        <p
+          class="fw-bold text-warning"
+          *ngIf="
+            serieForm.get('eps_watched')?.hasError('required') &&
+            serieForm.get('eps_watched')?.touched
+          "
+        >
+          Se requiere el numero de Episodios para que mantengas el control de tu
+          inventario
+        </p>
+        <p
+          class="fw-bold text-warning"
+          *ngIf="
+            serieForm.get('eps_watched')?.hasError('pattern') &&
+            serieForm.get('eps_watched')?.touched
+          "
+        >
+          Debe ser un numero
+        </p>
+      </div>
+      <div class="col-md-6">
+        <label for="inputCre_year" class="form-label"
+          >Año de creacion</label
+        >
+        <input type="text" formControlName="cre_year" class="form-control" />
+        <p
+          class="fw-bold text-warning"
+          *ngIf="
+            serieForm.get('cre_year')?.hasError('required') &&
+            serieForm.get('cre_year')?.touched
+          "
+        >
+          Se requiere el año para que mantengas el control de tu inventario
+        </p>
+        <p
+          class="fw-bold text-warning"
+          *ngIf="
+            serieForm.get('cre_year')?.hasError('pattern') &&
+            serieForm.get('cre_year')?.touched
+          "
+        >
+          Debe ser un numero
+        </p>
+      </div>
+      <div class="col-md-2">
+        <label for="inputCreator" class="form-label"
+          >Creador</label
+        >
+        <input type="text" formControlName="creator" class="form-control" />
+      </div>
+      <div class="col-md-12">
+        <label for="inputRate" class="form-label"
+          >Calificacion del uno al 5</label
+        >
+        <input type="text" formControlName="rate" class="form-control" />
+        <p
+          class="fw-bold text-warning"
+          *ngIf="
+            serieForm.get('rate')?.hasError('required') &&
+            serieForm.get('rate')?.touched
+          "
+        >
+          Se requiere la Calificacion para que mantengas el control de tu inventario
+        </p>
+        <p
+          class="fw-bold text-warning"
+          *ngIf="
+            serieForm.get('rate')?.hasError('pattern') &&
+            serieForm.get('rate')?.touched
+          "
+        >
+          Debe ser entre 1 y 5
+        </p>
+      </div>
+      <div class="col-md-12">
+        <label for="inputLast_date" class="form-label"
+          >Ultima fecha de haberla visto</label
+        >
+        <input type="date" formControlName="last_date_watched" class="form-control" />
+        <p
+          class="fw-bold text-warning"
+          *ngIf="
+            serieForm.get('last_date_watched')?.hasError('required') &&
+            serieForm.get('last_date_watched')?.touched
+          "
+        >
+          Se requiere la Fecha para que mantengas el control de tu inventario
+        </p>
+      </div>
+      <div class="col-md-12">
+        <label for="inputUrl" class="form-label"
+          >Agrega la Url de una foto de la serie</label
+        >
+        <input type="text" formControlName="image_ser" class="form-control" />
+        <p
+          class="fw-bold text-warning"
+          *ngIf="
+            serieForm.get('image_ser')?.hasError('required') &&
+            serieForm.get('image_ser')?.touched
+          "
+        >
+          Se requiere la Url para que mantengas el control de tu inventario
+        </p>
+        <p
+          class="fw-bold text-warning"
+          *ngIf="
+            serieForm.get('image_ser')?.hasError('pattern') &&
+            serieForm.get('image_ser')?.touched
+          "
+        >
+          Debe ser una Url
+        </p>
+      </div>
+      <div class="col-12">
+        <button
+          type="submit"
+          class="btn btn-light"
+          [disabled]="serieForm.invalid"
+        >
+          {{ action }}
+        </button>
+      </div>
+    </form>
+  </div>

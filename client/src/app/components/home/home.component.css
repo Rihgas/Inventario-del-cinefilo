@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne+Tactile&display=swap');
+.titulo-nuevo {
+    font-family: 'Syne Tactile', cursive;
+}
+
+.container-fluid{
+    height: 110vh;
+    background-color: #21325E;
+}

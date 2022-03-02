@@ -1,0 +1,72 @@
+<nav
+  class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark"
+  style="background-color: #f1d00a !important"
+>
+  <div class="container-fluid">
+    <a class="navbar-brand">El inventario del cinefilo</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            aria-current="page"
+            routerLink="/"
+            href="#"
+            >Home</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/galeria">Galeria</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/tu-lista">Tu lista</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="navbarDropdownMenuLink"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Registra lo que has visto
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li>
+              <a class="dropdown-item" routerLink="/registrar-pelicula" href="#"
+                >Peliculas</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" routerLink="/registrar-serie" href="#"
+                >Series</a
+              >
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <span class="d-flex justify-content-end">
+      <img src="/assets/icons/pelicula.svg" class="movie-icon" alt="movie icon">
+    </span>
+  </div>
+</nav>
+<nav class="navbar other_nav">
+    <h1 class="navbar-brand">{{ titulo }}</h1>
+    <form class="d-flex">
+      <img src="/assets/icons/rollo.png" class="title-icon" alt="">
+    </form>
+</nav>
+

@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+
+:root {
+    --color-negro: #1d1d1d;
+}
+
+.contenido {
+    position: absolute;
+    top: 15%;
+    left: 20%;
+    margin-right: 50px;
+}
+
+.icon-pepe {
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+  
+.fa-pencil:hover {
+    color: #00c400;
+}
+  
+.fa-trash:hover {
+    color: #ca0000;
+}

@@ -1,0 +1,13 @@
+.container-fluid{
+    min-height: 100vh;
+    background-color: #21325E;
+}
+
+img{
+    width: 15vw;
+    height: 20vh;
+}
+
+.table_img{
+    width: 16vw;
+}

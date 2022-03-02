@@ -1,0 +1,44 @@
+.carousel-item .carousel-caption{
+    font-family: 'Roboto Slab', serif;
+}
+
+a{
+    color: #21325E !important;
+}
+
+nav{
+    margin-bottom: 1vh;
+}
+
+.text-center{
+    color: #f1d00a;
+    background-color: #3E497A;
+    border-radius: 10px;
+    width: 14vw;
+    margin-top: 20vh;
+    margin-bottom: 2vh;
+    padding-bottom: 0.5vh;
+}
+
+.movie-icon{
+    width: 2vw;
+    height: 4vh;;
+}
+
+.other_nav{
+    margin-top: 5vh;
+}
+
+.navbar{
+    background-color: #3E497A;
+}
+
+.title-icon{
+    height: 6vh;
+    width: 6vh;
+}
+
+.title_container{
+    min-height: 10vh;
+    margin-top: 10vh;
+}

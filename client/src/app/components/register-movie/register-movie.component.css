@@ -1,0 +1,18 @@
+label{
+    color: #F1D00A;
+}
+
+form{
+    margin-top: 2vh;
+    margin-left: 20vh;
+    margin-right: 20vh;
+    padding-bottom: 3vh;
+    border-radius: 10px;
+}
+
+.container-fluid{
+    background-color: #21325E;
+    height: 100vh;
+}
+
+
