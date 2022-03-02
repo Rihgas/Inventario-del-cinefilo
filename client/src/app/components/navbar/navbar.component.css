@@ -27,6 +27,7 @@ nav{
 
 .other_nav{
     margin-top: 5vh;
+    margin-bottom: 5vh;
 }
 
 .navbar{
@@ -34,8 +35,17 @@ nav{
 }
 
 .title-icon{
+    margin-top: 1vh;
+    margin-right: 3vw;
     height: 6vh;
-    width: 6vh;
+    width: 3vw;
+}
+
+h1{
+    color: #f1d00a;
+    margin-left: 3vw;
+    font-size: 3vh;
+
 }
 
 .title_container{

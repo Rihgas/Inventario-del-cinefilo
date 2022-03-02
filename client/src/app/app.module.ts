@@ -13,7 +13,6 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { FilmsListComponent } from './components/films-list/films-list.component';
 import { RegisterMovieComponent } from './components/register-movie/register-movie.component';
 import { RegisterSerieComponent } from './components/register-serie/register-serie.component';
-import { GalleryComponent } from './components/gallery/gallery.component';
 
 
 @NgModule({
@@ -26,7 +25,6 @@ import { GalleryComponent } from './components/gallery/gallery.component';
     FilmsListComponent,
     RegisterMovieComponent,
     RegisterSerieComponent,
-    GalleryComponent,
   ],
   imports: [
     BrowserModule,
